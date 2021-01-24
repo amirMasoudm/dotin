@@ -28,9 +28,9 @@ public class StockMain {
         List<Integer> topTrans = new ArrayList();
         int lengthDays = days.size();
         for (int i = 0; i < lengthDays; i++) {
-            if (days.get(i).equals(days.get(0)) == false && days.get(i) > days.get(i - 1) && (days.indexOf(days.get(i)) == days.size() - 1 || days.get(i) > days.get(i + 1))) {
+            if (!days.get(i).equals(days.get(0)) && days.get(i) > days.get(i - 1) && (days.indexOf(days.get(i)) == days.size() - 1 || days.get(i) > days.get(i + 1))) {
                 int profit = lastMI;
-                for (int j = days.indexOf(lastMI); days.get(j).equals(days.get(i)) == false; j++) {
+                for (int j = days.indexOf(lastMI); !days.get(j).equals(days.get(i)); j++) {
                     if (days.get(j) < days.get(j + 1) && days.get(j) < profit) {
                         profit = days.get(j);
                     }

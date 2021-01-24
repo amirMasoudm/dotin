@@ -11,14 +11,15 @@ public class QMain {
     }
 
     private static int findMinimumFromMS(int[][] arr, int[][] ms) {
-        int sum = 0;
+        int valToReach= 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (arr[i][j] != ms[i][j])
-                    sum++;
+                if (arr[i][j] != ms[i][j]) {
+                    valToReach += Math.abs(arr[i][j] - ms[i][j]);
+                }
             }
         }
-        return sum;
+        return valToReach;
     }
 
     private static void findMinimum(int[][] arr) {
@@ -33,7 +34,7 @@ public class QMain {
                 {{2, 7, 6}, {9, 5, 1}, {4, 3, 8}},
         };
 
-        int min = 9;
+        int min = 12;
         for (int i = 0; i < 8; i++) {
             int x = findMinimumFromMS(arr, ms[i]);
             if (x < min)

@@ -30,7 +30,7 @@ public class Main {
             }
         }
         for (int i = 0; i < arr.size(); i++) {
-            if (firestPosition.get(i) != arr.get(i))
+            if (!firestPosition.get(i).equals(arr.get(i)))
                 sum++;
         }
 
